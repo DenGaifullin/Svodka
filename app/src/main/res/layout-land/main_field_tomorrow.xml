@@ -8,7 +8,8 @@
     android:layout_height="330dp"
     app:columnCount="14"
     app:rowCount="9"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
 
     <TextView
         android:id="@+id/textView1" style="@style/MyMainTextStyle"
