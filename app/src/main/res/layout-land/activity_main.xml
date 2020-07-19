@@ -20,14 +20,31 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <include
+            android:id="@+id/line2"
             layout="@layout/additional_field_tomorrow"
-            android:layout_width="700dp"
+            android:layout_width="550dp"
             android:layout_height="260dp"
             app:layout_constraintTop_toBottomOf="@id/line1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
+        <include layout="@layout/main_field_today"
+            android:id="@+id/line3"
+            android:layout_marginTop="30dp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/main_field_height"
+            app:layout_constraintTop_toBottomOf="@id/line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </include>
+
+        <include layout="@layout/additional_field_today"
+            android:id="@+id/line4"
+            android:layout_width="450dp"
+            android:layout_height="260dp"
+            app:layout_constraintTop_toBottomOf="@id/line3"
+            app:layout_constraintStart_toStartOf="parent">
+        </include>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>
