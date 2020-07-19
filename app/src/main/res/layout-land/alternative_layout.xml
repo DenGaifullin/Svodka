@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.gridlayout.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="330dp"
+    app:columnCount="14"
+    app:rowCount="9"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView1" style="@style/MyMainTextStyle"
+        android:text="Номер ДГУ"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/MyMainTextStyle"
+        android:text="м/ч суточные" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/MyMainTextStyle"
+
+        android:text="м/ч общ" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/MyMainTextStyle"
+        android:text="КВТ сут" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/MyMainTextStyle"
+        android:text="КВТ общ" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/MyMainTextStyle"
+        android:text="ср.нагр" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/MyMainTextStyle"
+        android:text="расх ДТ" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/MyMainTextStyle"
+        android:text="Коэф" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/MyMainTextStyle"
+        android:text="Расх мас" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/MyMainTextStyle"
+        android:text="посл ТО" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView11"
+        style="@style/MyMainTextStyle"
+        android:text="Активка" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView12"
+        style="@style/MyMainTextStyle"
+        android:text="Реактив" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/MyMainTextStyle"
+        android:text="в Квт" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView14"
+        style="@style/MyMainTextStyle"
+        android:text="Разница" >
+    </TextView>
+    <!--&lt;!&ndash;<TextView
+        android:id="@+id/textView15"
+        style="@style/MyMainTextStyle"
+        android:layout_width="0dp"
+        android:text="Spare" >&ndash;&gt;
+    </TextView>-->
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/MyMainTextStyle"
+        app:layout_column="0"
+        android:text="ДГУ №1" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView17"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №2" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView18"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №3" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView19"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №4" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView20"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №5" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView21"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №6" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView22"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №7" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView23"
+        app:layout_column="0"
+        style="@style/MyMainTextStyle"
+        android:text="ДГУ №8" >
+    </TextView>
+
+
+    <!--// Дальше идут Данные Дизелей//-->
+    <!--Данные ДГУ №1-->
+
+    <TextView
+        android:id="@+id/textView24_mChSutochn"
+        style="@style/MySecondaryTextStyle"
+        app:layout_row="1">
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_mChObshie"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_KWTsutochn"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_KWTobshie"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT"
+        style="@style/MySecondaryTextStyle"
+        android:text="ДГУ №8" >
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 2-->
+
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU2"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU2"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU2"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU2"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU2"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU2"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU2"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU2"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 3-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU3"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU3"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU3"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU3"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU3"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU3"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU3"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU3"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU3"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU3"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU3"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU3"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU3"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 4-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU4"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU4"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU4"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU4"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU4"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU4"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU4"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU4"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU4"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU4"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU4"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU4"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU4"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+
+    <!--Дгу № 5-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU5"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU5"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU5"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU5"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU5"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU5"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU5"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU5"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 6-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU6"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU6"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU6"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU6"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU6"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU6"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU6"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU6"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 7-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU7"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU7"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU7"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU7"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU7"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU7"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU7"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU7"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+    <!--Дгу № 8-->
+    <TextView
+        android:id="@+id/textView24_engineHours_DGU8"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/textView25_OllEngineHours_DGU8"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView26_dayKWT_DGU8"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <EditText
+        android:id="@+id/textView27_allKWT_DGU8"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <TextView
+        android:id="@+id/textView28_averageLoad_DGU8"
+        style="@style/MySecondaryTextStyle"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/textView29_fuelConsumption_DGU8"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView31_coefficient_DGU8"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView30_oilConsumption_DGU8"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <EditText
+        android:id="@+id/textView32_afterServiceTO_DGU8"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/textView33_activeEnergy_DGU8"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/textView34_reactiveEnergy_DGU8"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <TextView
+        android:id="@+id/textView35_KWT_DGU8"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+    <TextView
+        android:id="@+id/textView36_differenceInKWT_DGU8"
+        style="@style/MySecondaryTextStyle">
+    </TextView>
+
+
+</androidx.gridlayout.widget.GridLayout>
