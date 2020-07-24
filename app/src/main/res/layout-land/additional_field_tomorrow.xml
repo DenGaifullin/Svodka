@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
-    android:layout_height="50dp"
+    android:layout_width="600dp"
+    android:layout_height="330dp"
     app:columnCount="4"
     app:rowCount="8"
     tools:context=".MainActivity"
@@ -56,49 +56,49 @@
 
     <!--Вторая колонка-->
     <EditText
-        android:id="@+id/edit_text_remainingFuel"
+        android:id="@+id/editText_remainingFuel"
         app:layout_column="1"
         app:layout_row="0"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_remainingOil"
+        android:id="@+id/editText_remainingOil"
         app:layout_column="1"
         app:layout_row="1"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_fuelCounter"
+        android:id="@+id/editText_fuelCounter"
         app:layout_column="1"
         app:layout_row="2"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_activeEnDrilling"
+        android:id="@+id/editText_activeEnDrilling"
         app:layout_column="1"
         app:layout_row="3"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactiveEnDrilling"
+        android:id="@+id/editText_reactiveEnDrilling"
         app:layout_column="1"
         app:layout_row="4"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_activeSpare"
+        android:id="@+id/editText_activeSpare"
         app:layout_column="1"
         app:layout_row="5"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactiveSpare"
+        android:id="@+id/editText_reactiveSpare"
         app:layout_column="1"
         app:layout_row="6"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_spacer"
+        android:id="@+id/editText_spacer"
         app:layout_column="1"
         app:layout_row="7"
         style="@style/MySecondaryTextStyleEditText">
@@ -156,13 +156,13 @@
 
     <!--Четвертая колонка-->
     <EditText
-        android:id="@+id/edit_text_DGU_coefficient_transformation_field"
+        android:id="@+id/editText_DGU_coefficient_transformation_field"
         app:layout_column="3"
         app:layout_row="0"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_driller_coefficient_transformation_field"
+        android:id="@+id/editText_driller_coefficient_transformation_field"
         app:layout_column="3"
         app:layout_row="1"
         style="@style/MySecondaryTextStyleEditText">
@@ -175,7 +175,7 @@
         <!--android:id="@+id/edit_text_fuelCounter"-->
     </TextView>
     <EditText
-        android:id="@+id/edit_text_active_difference_DGU_and_Driller"
+        android:id="@+id/editText_active_difference_DGU_and_Driller"
         app:layout_column="3"
         app:layout_row="3"
         style="@style/MySecondaryTextStyle">

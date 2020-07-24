@@ -1,105 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <androidx.gridlayout.widget.GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
-    android:layout_height="50dp"
+    android:background="@android:color/darker_gray"
+    android:paddingStart="10dp"
+    android:paddingBottom="20dp"
+    android:layout_width="550dp"
+    android:layout_height="300dp"
     app:columnCount="4"
     app:rowCount="8"
     tools:context=".MainActivity"
     tools:ignore="MissingDefaultResource">
 
     <TextView
-        android:id="@+id/textView_remainingFuel" style="@style/MyMainTextStyle"
-        android:text="Остаток Д.Т."
+        android:id="@+id/textView_remainingFuel_today" style="@style/MyMainTextStyle"
+        android:text="@string/remainingFuel_today"
         app:layout_column="0"
         app:layout_row="0">
     </TextView>
 
     <TextView
-        android:id="@+id/textView_remainingOil" style="@style/MyMainTextStyle"
-        android:text="Остаток Д.М."
+        android:id="@+id/textView_remainingOil_today" style="@style/MyMainTextStyle"
+        android:text="@string/remainingOil"
         app:layout_column="0">
     </TextView>
     <TextView
-        android:id="@+id/textView_fuelCounter" style="@style/MyMainTextStyle"
-        android:text="Топл Счетчик"
+        android:id="@+id/textView_fuelCounter_today" style="@style/MyMainTextStyle"
+        android:text="@string/fuelCounter"
         app:layout_column="0">
     </TextView>
     <TextView
-        android:id="@+id/textView_activeEnDrilling" style="@style/MyMainTextStyle"
-        android:text="Актив Буровой"
+        android:id="@+id/textView_activeEnDrillers_today" style="@style/MyMainTextStyle"
+        android:text="@string/activeEnDrillers"
         app:layout_column="0">
     </TextView>
     <TextView
-        android:id="@+id/textView_reactiveEnDrilling" style="@style/MyMainTextStyle"
-        android:text="Реакт Буровой"
+        android:id="@+id/textView_reactiveEnDrillers_today" style="@style/MyMainTextStyle"
+        android:text="@string/reactiveEnDrillers"
         app:layout_column="0">
     </TextView>
     <TextView
-        android:id="@+id/textView_activeSpare" style="@style/MyMainTextStyle"
-        android:text="Актив Запас"
+        android:id="@+id/textView_activeSpare_today" style="@style/MyMainTextStyle"
+        android:text="@string/activeSpare"
         app:layout_column="0">
     </TextView>
     <TextView
         android:id="@+id/textView_reactiveSpare" style="@style/MyMainTextStyle"
-        android:text="Реактив Запас"
+        android:text="@string/reactiveSpare"
         app:layout_column="0">
     </TextView>
     <TextView
         android:id="@+id/textView_spacer" style="@style/MyMainTextStyle"
-        android:text="Запас"
+        android:text="@string/spare"
         app:layout_column="0">
     </TextView>
 
     <!--Вторая колонка-->
     <EditText
-        android:id="@+id/edit_text_remainingFuel"
+        android:id="@+id/editText_remainingFuel_today"
         app:layout_column="1"
         app:layout_row="0"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_remainingOil"
+        android:id="@+id/edit_text_remainingOil_today"
         app:layout_column="1"
         app:layout_row="1"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_fuelCounter"
+        android:id="@+id/edit_text_fuelCounter_today"
         app:layout_column="1"
         app:layout_row="2"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_activeEnDrilling"
+        android:id="@+id/editText_activeEnDrilling_today"
         app:layout_column="1"
         app:layout_row="3"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactiveEnDrilling"
+        android:id="@+id/editText_reactiveEnDrilling_today"
         app:layout_column="1"
         app:layout_row="4"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_activeSpare"
+        android:id="@+id/editText_activeSpare_today"
         app:layout_column="1"
         app:layout_row="5"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactiveSpare"
+        android:id="@+id/editText_reactiveSpare_today"
         app:layout_column="1"
         app:layout_row="6"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_spacer"
+        android:id="@+id/edit_text_spacer_today"
         app:layout_column="1"
         app:layout_row="7"
         style="@style/MySecondaryTextStyleEditText">
@@ -110,7 +112,7 @@
         android:id="@+id/textView_DGU_coefficient_transformation" style="@style/MyMainTextStyle"
         app:layout_column="2"
         app:layout_row="0"
-        android:text="Кофф.транс.ДГУ"
+        android:text="@string/DGU_coefficient_transformation"
         >
     </TextView>
 
@@ -118,52 +120,52 @@
         android:id="@+id/textView_drillers_coefficient_transformation" style="@style/MyMainTextStyle"
         app:layout_column="2"
         app:layout_row="1"
-        android:text="Кофф.транс.Буров"
+        android:text="@string/drillers_coefficient_transformation"
         >
     </TextView>
     <TextView
-        android:id="@+id/textView_InKWT" style="@style/MyMainTextStyle"
-        android:text="Буровая В КВТ"
+        android:id="@+id/textView_drillersActiveEnergyInKWT" style="@style/MyMainTextStyle"
+        android:text="@string/drillersActiveEnergyInKWT"
         app:layout_column="2"
         app:layout_row="2"
         >
     </TextView>
     <TextView
-        android:id="@+id/textView_activeEnDrillingTransformIn_KWT" style="@style/MySecondaryTextStyle"
+        android:id="@+id/textView_activeEnDrillingTransformIn_KWT_today" style="@style/MySecondaryTextStyle"
         app:layout_column="2"
         app:layout_row="3"
         >
     </TextView>
     <TextView
-        android:id="@+id/textView_reactiveEnDrillingTransformIn_KWT" style="@style/MySecondaryTextStyle"
+        android:id="@+id/textView_reactiveEnDrillingTransformIn_KWT_today" style="@style/MySecondaryTextStyle"
         app:layout_column="2"
         app:layout_row="4">
     </TextView>
     <TextView
-        android:id="@+id/textView_activeEnDrillingTransformIn_KWTSpare" style="@style/MySecondaryTextStyleEditText"
+        android:id="@+id/textView_activeEnDrillingTransformIn_KWTSpare_today" style="@style/MySecondaryTextStyleEditText"
         app:layout_column="2"
         app:layout_row="5">
     </TextView>
     <TextView
-        android:id="@+id/textView_reactiveEnDrillingTransformIn_KWTSpare" style="@style/MySecondaryTextStyleEditText"
+        android:id="@+id/textView_reactiveEnDrillingTransformIn_KWTSpare_today" style="@style/MySecondaryTextStyleEditText"
         app:layout_column="2"
         app:layout_row="6">
     </TextView>
     <TextView
-        android:id="@+id/textView_spacerColumn1" style="@style/MySecondaryTextStyleEditText"
+        android:id="@+id/textView_spacerColumn1_today" style="@style/MySecondaryTextStyleEditText"
         app:layout_row="7"
         app:layout_column="2">
     </TextView>
 
     <!--Четвертая колонка-->
     <EditText
-        android:id="@+id/edit_text_DGU_coefficient_transformation_field"
+        android:id="@+id/editText_DGU_coefficient_transformation_field_today"
         app:layout_column="3"
         app:layout_row="0"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_driller_coefficient_transformation_field"
+        android:id="@+id/editText_driller_coefficient_transformation_field_today"
         app:layout_column="3"
         app:layout_row="1"
         style="@style/MySecondaryTextStyleEditText">
@@ -171,30 +173,30 @@
     <TextView
         app:layout_column="3"
         app:layout_row="2"
-        android:text="Разница в КВТ"
+        android:text="@string/difference_inKWT_enComplex_and_drillers"
         style="@style/MyMainTextStyle">
         <!--android:id="@+id/edit_text_fuelCounter"-->
     </TextView>
     <EditText
-        android:id="@+id/edit_text_active_difference_DGU_and_Driller"
+        android:id="@+id/edit_text_active_difference_DGU_and_Driller_today"
         app:layout_column="3"
         app:layout_row="3"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactive_difference_DGU_and_Driller"
+        android:id="@+id/edit_text_reactive_difference_DGU_and_Driller_today"
         app:layout_column="3"
         app:layout_row="4"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_active_difference_DGU_and_DrillerSpare"
+        android:id="@+id/edit_text_active_difference_DGU_and_DrillerSpare_today"
         app:layout_column="3"
         app:layout_row="5"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/edit_text_reactive_difference_DGU_and_DrillerSpare"
+        android:id="@+id/edit_text_reactive_difference_DGU_and_DrillerSpare_today"
         app:layout_column="3"
         app:layout_row="6"
         style="@style/MySecondaryTextStyleEditText">

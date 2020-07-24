@@ -6,83 +6,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="330dp"
+    android:background="@android:color/darker_gray"
     app:columnCount="14"
     app:rowCount="9"
     tools:context=".MainActivity"
     tools:ignore="MissingDefaultResource">
 
     <TextView
-        android:id="@+id/textView1" style="@style/MyMainTextStyle"
-        android:text="Номер ДГУ"
-        >
+        android:id="@+id/textView" style="@style/MyNewMainTextStyle"
+        android:text="Номер ДГУ">
     </TextView>
     <TextView
         android:id="@+id/textView2"
-        style="@style/MyMainTextStyle"
-        android:text="м/ч суточные" >
+        style="@style/MyNewMainTextStyle"
+        android:text="м/ч суточн" >
     </TextView>
 
     <TextView
         android:id="@+id/textView3"
-        style="@style/MyMainTextStyle"
-
+        style="@style/MyNewMainTextStyle"
         android:text="м/ч общ" >
     </TextView>
 
     <TextView
         android:id="@+id/textView4"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="КВТ сут" >
     </TextView>
 
     <TextView
         android:id="@+id/textView5"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="КВТ общ" >
     </TextView>
     <TextView
         android:id="@+id/textView6"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="ср.нагр" >
     </TextView>
     <TextView
         android:id="@+id/textView7"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="расх ДТ" >
     </TextView>
     <TextView
         android:id="@+id/textView8"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="Коэф" >
     </TextView>
     <TextView
         android:id="@+id/textView9"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="Расх мас" >
     </TextView>
     <TextView
         android:id="@+id/textView10"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="посл ТО" >
     </TextView>
     <TextView
         android:id="@+id/textView11"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="Активка" >
     </TextView>
     <TextView
         android:id="@+id/textView12"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="Реактив" >
     </TextView>
     <TextView
         android:id="@+id/textView13"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="в Квт" >
     </TextView>
     <TextView
         android:id="@+id/textView14"
-        style="@style/MyMainTextStyle"
+        style="@style/MyNewMainTextStyle"
         android:text="Разница" >
     </TextView>
     <!--&lt;!&ndash;<TextView
@@ -146,482 +145,495 @@
     <!--Данные ДГУ №1-->
 
     <TextView
-        android:id="@+id/textView24_mChSutochn"
+        android:id="@+id/textView_today_day_engineHours"
         style="@style/MySecondaryTextStyle"
         app:layout_row="1">
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_mChObshie"
+        android:id="@+id/editText_all_engineHours_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_KWTsutochn"
+        android:id="@+id/textView_day_KWT_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_KWTobshie"
+        android:id="@+id/editText_all_KWT_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad"
+        android:id="@+id/textView_averageLoad_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption"
+        android:id="@+id/textView_fuelConsumption_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient"
+        android:id="@+id/editText_coefficient_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption"
+        android:id="@+id/editText_oilConsumption_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO"
+        android:id="@+id/editText_afterServiceTO_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy"
+        android:id="@+id/editText_activeEnergy_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy"
+        android:id="@+id/editText_reactiveEnergy_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT"
-        style="@style/MySecondaryTextStyle"
-        android:text="ДГУ №8" >
+        android:id="@+id/textView_KWT_today"
+        style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT"
+        android:id="@+id/textView_differenceInKWT_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 2-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU2"
+        android:id="@+id/textView_engineHours_DGU2_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU2"
+        android:id="@+id/editText_allEngineHours_DGU2_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU2"
+        android:id="@+id/textView_dayKWT_DGU2_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU2"
-        style="@style/MySecondaryTextStyleEditText"
-        >
+        android:id="@+id/editText_allKWT_DGU2_today"
+        android:onClick="onClick"
+        style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU2"
-        style="@style/MySecondaryTextStyle"
-        >
+        android:id="@+id/textView_averageLoad_DGU2_today"
+        style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU2"
+        android:id="@+id/editText_fuelConsumption_DGU2_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU2"
+        android:id="@+id/editText_coefficient_DGU2_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU2"
+        android:id="@+id/editText_oilConsumption_DGU2_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU2"
+        android:id="@+id/editText_afterServiceTO_DGU2_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU2"
+        android:id="@+id/editText_activeEnergy_DGU2_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU2"
+        android:id="@+id/editText_reactiveEnergy_DGU2_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU2"
+        android:id="@+id/textView_KWT_DGU2_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU2"
+        android:id="@+id/textView_differenceInKWT_DGU2_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 3-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU3"
+        android:id="@+id/textView_engineHours_DGU3_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU3"
+        android:id="@+id/editText_allEngineHours_DGU3_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU3"
+        android:id="@+id/textView_dayKWT_DGU3_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU3"
+        android:id="@+id/editText_allKWT_DGU3_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU3"
+        android:id="@+id/textView_averageLoad_DGU3_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU3"
+        android:id="@+id/editText_fuelConsumption_DGU3_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU3"
+        android:id="@+id/editText_coefficient_DGU3_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU3"
+        android:id="@+id/editText_oilConsumption_DGU3_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU3"
+        android:id="@+id/editText_afterServiceTO_DGU3_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU3"
+        android:id="@+id/editText_activeEnergy_DGU3_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU3"
+        android:id="@+id/editText_reactiveEnergy_DGU3_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU3"
+        android:id="@+id/textView_KWT_DGU3_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU3"
+        android:id="@+id/textView_differenceInKWT_DGU3_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 4-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU4"
+        android:id="@+id/textView_engineHours_DGU4_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU4"
+        android:id="@+id/editText_allEngineHours_DGU4_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU4"
+        android:id="@+id/textView_dayKWT_DGU4_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU4"
+        android:id="@+id/editText_allKWT_DGU4_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU4"
+        android:id="@+id/textView_averageLoad_DGU4_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU4"
+        android:id="@+id/editText_fuelConsumption_DGU4_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU4"
+        android:id="@+id/editText_coefficient_DGU4_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU4"
+        android:id="@+id/editText_oilConsumption_DGU4_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU4"
+        android:id="@+id/editText_afterServiceTO_DGU4_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU4"
+        android:id="@+id/editText_activeEnergy_DGU4_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU4"
+        android:id="@+id/editText_reactiveEnergy_DGU4_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU4"
+        android:id="@+id/textView_KWT_DGU4_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU4"
+        android:id="@+id/textView_differenceInKWT_DGU4_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
 
     <!--Дгу № 5-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU5"
+        android:id="@+id/textView_engineHours_DGU5_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU5"
+        android:id="@+id/editText_allEngineHours_DGU5_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU5"
+        android:id="@+id/textView_dayKWT_DGU5_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU5"
+        android:id="@+id/editText_allKWT_DGU5_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU5"
+        android:id="@+id/textView_averageLoad_DGU5_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU5"
+        android:id="@+id/editText_fuelConsumption_DGU5_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU5"
+        android:id="@+id/editText_coefficient_DGU5_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU5"
+        android:id="@+id/editText_oilConsumption_DGU5_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU5"
+        android:id="@+id/editText_afterServiceTO_DGU5_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU5"
+        android:id="@+id/editText_activeEnergy_DGU5_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU5"
+        android:id="@+id/editText_reactiveEnergy_DGU5_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU5"
+        android:id="@+id/textView_KWT_DGU5_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU5"
+        android:id="@+id/textView_differenceInKWT_DGU5_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 6-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU6"
+        android:id="@+id/textView_engineHours_DGU6_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU6"
+        android:id="@+id/editText_allEngineHours_DGU6_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU6"
+        android:id="@+id/textView_dayKWT_DGU6_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU6"
+        android:id="@+id/editText_allKWT_DGU6_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU6"
+        android:id="@+id/textView_averageLoad_DGU6_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU6"
+        android:id="@+id/editText_fuelConsumption_DGU6_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU6"
+        android:id="@+id/editText_coefficient_DGU6_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU6"
+        android:id="@+id/editText_oilConsumption_DGU6_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU6"
+        android:id="@+id/editText_afterServiceTO_DGU6_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU6"
+        android:id="@+id/editText_activeEnergy_DGU6_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU6"
+        android:id="@+id/editText_reactiveEnergy_DGU6_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU6"
+        android:id="@+id/textView_KWT_DGU6_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU6"
+        android:id="@+id/textView_differenceInKWT_DGU6_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 7-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU7"
+        android:id="@+id/textView_engineHours_DGU7_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU7"
+        android:id="@+id/editText_allEngineHours_DGU7_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU7"
+        android:id="@+id/textView_dayKWT_DGU7_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU7"
+        android:id="@+id/editText_allKWT_DGU7_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU7"
+        android:id="@+id/textView_averageLoad_DGU7_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU7"
+        android:id="@+id/editText_fuelConsumption_DGU7_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU7"
+        android:id="@+id/editText_coefficient_DGU7_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU7"
+        android:id="@+id/editText_oilConsumption_DGU7_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU7"
+        android:id="@+id/editText_afterServiceTO_DGU7_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU7"
+        android:id="@+id/editText_activeEnergy_DGU7_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU7"
+        android:id="@+id/editText_reactiveEnergy_DGU7_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU7"
+        android:id="@+id/textView_KWT_DGU7_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU7"
+        android:id="@+id/textView_differenceInKWT_DGU7_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 
     <!--Дгу № 8-->
     <TextView
-        android:id="@+id/textView24_engineHours_DGU8"
+        android:id="@+id/textView_engineHours_DGU8_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
 
     <EditText
-        android:id="@+id/textView25_OllEngineHours_DGU8"
+        android:id="@+id/editText_allEngineHours_DGU8_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView26_dayKWT_DGU8"
+        android:id="@+id/textView_dayKWT_DGU8_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <EditText
-        android:id="@+id/textView27_allKWT_DGU8"
+        android:id="@+id/editText_allKWT_DGU8_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText"
         >
     </EditText>
     <TextView
-        android:id="@+id/textView28_averageLoad_DGU8"
+        android:id="@+id/textView_averageLoad_DGU8_today"
         style="@style/MySecondaryTextStyle"
         >
     </TextView>
     <EditText
-        android:id="@+id/textView29_fuelConsumption_DGU8"
+        android:id="@+id/editText_fuelConsumption_DGU8_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView31_coefficient_DGU8"
+        android:id="@+id/editText_coefficient_DGU8_today"
+        android:onClick="onClick"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView30_oilConsumption_DGU8"
+        android:id="@+id/editText_oilConsumption_DGU8_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
 
     <EditText
-        android:id="@+id/textView32_afterServiceTO_DGU8"
+        android:id="@+id/editText_afterServiceTO_DGU8_today"
         style="@style/MySecondaryTextStyle">
     </EditText>
     <EditText
-        android:id="@+id/textView33_activeEnergy_DGU8"
+        android:id="@+id/editText_activeEnergy_DGU8_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <EditText
-        android:id="@+id/textView34_reactiveEnergy_DGU8"
+        android:id="@+id/editText_reactiveEnergy_DGU8_today"
         style="@style/MySecondaryTextStyleEditText">
     </EditText>
     <TextView
-        android:id="@+id/textView35_KWT_DGU8"
+        android:id="@+id/textView_KWT_DGU8_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
     <TextView
-        android:id="@+id/textView36_differenceInKWT_DGU8"
+        android:id="@+id/textView_differenceInKWT_DGU8_today"
         style="@style/MySecondaryTextStyle">
     </TextView>
 </androidx.gridlayout.widget.GridLayout>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.gridlayout.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/darker_gray"
+    android:paddingEnd="10dp"
+    android:paddingBottom="20dp"
+    android:layout_width="650dp"
+    android:layout_height="330dp"
+    app:columnCount="6"
+    app:rowCount="8"
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/textView_additionFuel" style="@style/MyMainTextStyle"
+        android:text="@string/additionFuel"
+        app:layout_column="0"
+        app:layout_row="0">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_additionOil" style="@style/MyMainTextStyle"
+        android:text="@string/additionOil"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_densityFuel" style="@style/MyMainTextStyle"
+        android:text="@string/density_fuel"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_DGU_tanks" style="@style/MyMainTextStyle"
+        android:text="@string/DGU_tanks"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_averageCoefficientOfComplex" style="@style/MyMainTextStyle"
+        android:text="@string/averageCoefficientOfComplex"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_weightRemainingFuel" style="@style/MyMainTextStyle"
+        android:text="@string/weightRemainingFuel"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_allRemainFuel" style="@style/MyMainTextStyle"
+        android:text="@string/allRemainFuel"
+        app:layout_column="0">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_remainFuelWeight" style="@style/MyMainTextStyle"
+        android:text="@string/weightOfDayConsumption"
+        app:layout_column="0">
+    </TextView>
+
+    <!--Вторая колонка-->
+    <EditText
+        android:id="@+id/edit_text_additionFuel"
+        app:layout_column="1"
+        app:layout_row="0"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/editText_additionOil"
+        app:layout_column="1"
+        app:layout_row="1"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/editText_densityFuel"
+        app:layout_column="1"
+        app:layout_row="2"
+        android:onClick="onClick"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/editText_allTanksOfDGU"
+        app:layout_column="1"
+        app:layout_row="3"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/editText_averageCoefficientAllComplex"
+        app:layout_column="1"
+        app:layout_row="4"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/editText_weightRemainingFuel"
+        app:layout_column="1"
+        app:layout_row="5"
+        style="@style/MySecondaryTextStyleEditText"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/editText_allConsumptionFuel"
+        app:layout_column="1"
+        app:layout_row="6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_remainFuelWeight"
+        app:layout_column="1"
+        app:layout_row="7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <!--Вторая группа-->
+    <TextView
+        android:id="@+id/textView_allKWT_ofEnergyComplex" style="@style/MyMainTextStyle"
+        android:text="@string/allKWT_ofEnergyComplex"
+        app:layout_column="2"
+        app:layout_row="0">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_allEngineRunHoursOfComplex" style="@style/MyMainTextStyle"
+        android:text="@string/allEngineRunHoursOfComplex"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_weightOfDayConsumption" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_Spare1" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_Spare2" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_Spare3" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_Spare4" style="@style/MyMainTextStyle"
+        android:text="Резерв"
+        app:layout_column="2">
+    </TextView>
+
+    <!--Вторая колонка-->
+    <EditText
+        android:id="@+id/editText_allKWT_ofEnergyComplex"
+        app:layout_column="3"
+        app:layout_row="0"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_allEngineRunHoursOfComplex"
+        app:layout_column="3"
+        app:layout_row="1"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_spare11"
+        app:layout_column="3"
+        app:layout_row="2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text__weightOfDayConsumption"
+        app:layout_column="3"
+        app:layout_row="3"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text__Spare1"
+        app:layout_column="3"
+        app:layout_row="4"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text__Spare2"
+        app:layout_column="3"
+        app:layout_row="5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text__Spare3"
+        app:layout_column="3"
+        app:layout_row="6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_Spare4"
+        app:layout_column="3"
+        app:layout_row="7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+    <!--Третья группа-->
+    <TextView
+        android:id="@+id/textView_cistern1" style="@style/MyMainTextStyle"
+        android:text="@string/cistern1"
+        app:layout_column="4"
+        app:layout_row="0">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_cistern2" style="@style/MyMainTextStyle"
+        android:text="Цистерна 2 "
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_cistern3" style="@style/MyMainTextStyle"
+        android:text="Цистерна 3"
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_cistern4" style="@style/MyMainTextStyle"
+        android:text="Цистерна 4"
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_cistern5" style="@style/MyMainTextStyle"
+        android:text="Цистерна 5"
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_cistern6" style="@style/MyMainTextStyle"
+        android:text="Цистерна 6"
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_cistern7" style="@style/MyMainTextStyle"
+        android:text="Цистерна 7"
+        app:layout_column="4">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_differenceRealRemainingAndOfficial" style="@style/MyMainTextStyle"
+        android:text="@string/differenceRealRemainingAndOfficial"
+        app:layout_column="4">
+    </TextView>
+
+    <!--Вторая колонка-->
+    <EditText
+        android:id="@+id/edit_text_cistern1"
+        app:layout_column="5"
+        app:layout_row="0"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern2"
+        app:layout_column="5"
+        app:layout_row="1"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern3"
+        app:layout_column="5"
+        app:layout_row="2"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern4"
+        app:layout_column="5"
+        app:layout_row="3"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern5"
+        app:layout_column="5"
+        app:layout_row="4"
+        style="@style/MySecondaryTextStyle">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern6"
+        app:layout_column="5"
+        app:layout_row="5"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_cistern7"
+        app:layout_column="5"
+        app:layout_row="6"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+    <EditText
+        android:id="@+id/edit_text_differenceRealRemainingAndOfficial"
+        app:layout_column="5"
+        app:layout_row="7"
+        style="@style/MySecondaryTextStyleEditText">
+    </EditText>
+
+</androidx.gridlayout.widget.GridLayout>

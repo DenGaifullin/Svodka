@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Svodka Android version</string>
+    <string name="allKWT_ofEnergyComplex">Сумма кВт</string>
+    <string name="allEngineRunHoursOfComplex">Сумма м/ч</string>
+    <string name="remainingFuelWeight">Вес общ ДТ</string>
+    <string name="weightOfDayConsumption">Вес расх.ДТ</string>
+    <string name="cistern1">Цистерна 1</string>
+    <string name="differenceRealRemainingAndOfficial">Разность</string>
+    <string name="additionFuel">Приход Д.Т</string>
+    <string name="additionOil">Приход Д.М</string>
+    <string name="density_fuel">Плотн Д.Т</string>
+    <string name="DGU_tanks">Расх баки</string>
+    <string name="averageCoefficientOfComplex">Ср.КэфКом</string>
+    <string name="averageLoadOfComplex">СрНагрКомп</string>
+    <string name="allRemainFuel">Общ расхДТ</string>
+    <string name="remainingFuel_today">Остат ДТ</string>
+    <string name="remainingOil">Остат ДМ</string>
+    <string name="fuelCounter">Топл Счетч</string>
+    <string name="activeEnDrillers">Актив Буров</string>
+    <string name="reactiveEnDrillers">Реакт Буров</string>
+    <string name="activeSpare">Актив Запас</string>
+    <string name="reactiveSpare">Реакт Запас</string>
+    <string name="spare">Запас</string>
+    <string name="DGU_coefficient_transformation">Коэф.тр.ДГУ</string>
+    <string name="drillers_coefficient_transformation">Коэф.тр.Бур</string>
+    <string name="drillersActiveEnergyInKWT">Буры В КВТ</string>
+    <string name="difference_inKWT_enComplex_and_drillers">Разн в КВТ</string>
+    <string name="weightRemainingFuel">Вес ост Д.Т</string>
+    <string name="save_main_field">save_main_field</string>
+    <string name="save_additional_field">save_additional_field</string>
+    <string name="save_remains_field">save_remains_field</string>
+    <string name="save_notes_field">save_notes_field</string>
 </resources>
