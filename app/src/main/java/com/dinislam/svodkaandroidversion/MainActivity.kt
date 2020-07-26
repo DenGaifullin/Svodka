@@ -588,17 +588,17 @@ class MainActivity : AppCompatActivity() {
             editText_weightRemainingFuel.setText(editText_densityFuel.text.toString().toDouble().times(editText_remainingFuel_today.text.toString().toDouble()) .toFloat().toString())
 
             //kWT counter
-            textView_KWT_today.text = editText_activeEnergy_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU2_today.text = editText_activeEnergy_DGU2_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU3_today.text = editText_activeEnergy_DGU3_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU4_today.text = editText_activeEnergy_DGU4_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU5_today.text = editText_activeEnergy_DGU5_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU6_today.text = editText_activeEnergy_DGU6_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU7_today.text = editText_activeEnergy_DGU7_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
-            textView_KWT_DGU8_today.text = editText_activeEnergy_DGU8_today.text.toString().toDouble().times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_today.text =      (     editText_activeEnergy_today.text.toString().toDouble() -      editText_activeEnergy.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU2_today.text = (editText_activeEnergy_DGU2_today.text.toString().toDouble() - editText_activeEnergy_DGU2.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU3_today.text = (editText_activeEnergy_DGU3_today.text.toString().toDouble() - editText_activeEnergy_DGU3.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU4_today.text = (editText_activeEnergy_DGU4_today.text.toString().toDouble() - editText_activeEnergy_DGU4.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU5_today.text = (editText_activeEnergy_DGU5_today.text.toString().toDouble() - editText_activeEnergy_DGU5.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU6_today.text = (editText_activeEnergy_DGU6_today.text.toString().toDouble() - editText_activeEnergy_DGU6.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU7_today.text = (editText_activeEnergy_DGU7_today.text.toString().toDouble() - editText_activeEnergy_DGU7.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
+            textView_KWT_DGU8_today.text = (editText_activeEnergy_DGU8_today.text.toString().toDouble() - editText_activeEnergy_DGU8.text.toString().toDouble()).times(editText_DGU_coefficient_transformation_field_today.text.toString().toInt()).toInt().toString()
 
             //difference first kwtCounter and second kwtCounter
-            textView_differenceInKWT_today.text = textView_day_KWT_today.text.toString().toInt().minus(textView_KWT_today.text.toString().toInt()).toString()
+            textView_differenceInKWT_today.text =      textView_day_KWT_today.text.toString().toInt().minus(textView_KWT_today.text.toString().toInt()).toString()
             textView_differenceInKWT_DGU2_today.text = textView_dayKWT_DGU2_today.text.toString().toInt().minus(textView_KWT_DGU2_today.text.toString().toInt()).toString()
             textView_differenceInKWT_DGU3_today.text = textView_dayKWT_DGU3_today.text.toString().toInt().minus(textView_KWT_DGU3_today.text.toString().toInt()).toString()
             textView_differenceInKWT_DGU4_today.text = textView_dayKWT_DGU4_today.text.toString().toInt().minus(textView_KWT_DGU4_today.text.toString().toInt()).toString()
