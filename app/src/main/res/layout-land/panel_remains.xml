@@ -7,7 +7,7 @@
     android:background="@android:color/darker_gray"
     android:paddingEnd="10dp"
     android:paddingBottom="20dp"
-    android:layout_width="650dp"
+    android:layout_width="630dp"
     android:layout_height="330dp"
     app:columnCount="6"
     app:rowCount="8"

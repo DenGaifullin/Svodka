@@ -1,6 +1,7 @@
 package com.dinislam.svodkaandroidversion
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -29,10 +30,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        initTomorrowTable(Data())
-//        initTodayTable(Data())
-        formattingData()
         initArray()
+        formattingData()
     }
 
     private fun initArray() {
@@ -374,9 +373,7 @@ class MainActivity : AppCompatActivity() {
             putString(getString(R.string.save_notes_field), editText_notes.text.toString())
             commit()
         }
-    }
-
-    private fun restoreData(){
+    }  private fun restoreData(){
         val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return
         val mainInf = sharedPref.getString(getString(R.string.save_main_field), "0")
         val additionalInf = sharedPref.getString(getString(R.string.save_additional_field), "0")
@@ -611,14 +608,14 @@ class MainActivity : AppCompatActivity() {
             textView_differenceInKWT_DGU8_today.text = textView_dayKWT_DGU8_today.text.toString().toInt().minus(textView_KWT_DGU8_today.text.toString().toInt()).toString()
 
             //drillers in kwt
-            textView_activeEnDrillingTransformIn_KWT_today.text = editText_activeEnDrilling_today.text.toString().toInt().times(editText_driller_coefficient_transformation_field_today.text.toString().toInt()).toString()
+            textView_activeEnDrillingTransformIn_KWT_today.text = (editText_activeEnDrilling_today.text.toString().toDouble() - editText_activeEnDrilling.text.toString().toDouble()).times(editText_driller_coefficient_transformation_field_today.text.toString().toInt()).toFloat().toString()
 
-            //difference in kwt energoComplex and drillers
-            edit_text_active_difference_DGU_and_Driller_today.setText (editText_allKWT_ofEnergyComplex.text.toString().toInt().minus(textView_activeEnDrillingTransformIn_KWT_today.text.toString().toInt()).toString())
+            //difference in k11wt energoComplex and drillers
+            if(textView_activeEnDrillingTransformIn_KWT_today.text.toString() != "0.0")
+                edit_text_active_difference_DGU_and_Driller_today.setText (editText_allKWT_ofEnergyComplex.text.toString().toInt().minus(textView_activeEnDrillingTransformIn_KWT_today.text.toString().toDouble()).toString())
         } catch (e: Exception){
             Toast.makeText(this, "Расчет не выполнен, неправильный формат данных - ${e.message}" , Toast.LENGTH_LONG).show()
         }
-
     }
 
     private fun formattingData(){
@@ -669,225 +666,35 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("DEEN", arrayTomorrow.toString())
 
-    }  private fun initTodayTable(data: Data) {
-        editText_all_engineHours_today.setText(data.dguArray[0].mChAll)
-        editText_allEngineHours_DGU2_today.setText(data.dguArray[1].mChAll)
-        editText_allEngineHours_DGU3_today.setText(data.dguArray[2].mChAll)
-        editText_allEngineHours_DGU4_today.setText(data.dguArray[3].mChAll)
-        editText_allEngineHours_DGU5_today.setText(data.dguArray[4].mChAll)
-        editText_allEngineHours_DGU6_today.setText(data.dguArray[5].mChAll)
-        editText_allEngineHours_DGU7_today.setText(data.dguArray[6].mChAll)
-        editText_allEngineHours_DGU8_today.setText(data.dguArray[7].mChAll)
-
-        editText_all_KWT_today.setText(data.dguArray[0].kWtAll)
-        editText_allKWT_DGU2_today.setText(data.dguArray[1].kWtAll)
-        editText_allKWT_DGU3_today.setText(data.dguArray[2].kWtAll)
-        editText_allKWT_DGU4_today.setText(data.dguArray[3].kWtAll)
-        editText_allKWT_DGU5_today.setText(data.dguArray[4].kWtAll)
-        editText_allKWT_DGU6_today.setText(data.dguArray[5].kWtAll)
-        editText_allKWT_DGU7_today.setText(data.dguArray[6].kWtAll)
-        editText_allKWT_DGU8_today.setText(data.dguArray[7].kWtAll)
-
-        editText_activeEnergy_today.setText(data.dguArray[0].activeEnergy)
-        editText_activeEnergy_DGU2_today.setText(data.dguArray[1].activeEnergy)
-        editText_activeEnergy_DGU3_today.setText(data.dguArray[2].activeEnergy)
-        editText_activeEnergy_DGU4_today.setText(data.dguArray[3].activeEnergy)
-        editText_activeEnergy_DGU5_today.setText(data.dguArray[4].activeEnergy)
-        editText_activeEnergy_DGU6_today.setText(data.dguArray[5].activeEnergy)
-        editText_activeEnergy_DGU7_today.setText(data.dguArray[6].activeEnergy)
-        editText_activeEnergy_DGU8_today.setText(data.dguArray[7].activeEnergy)
-
-        editText_activeEnDrilling_today.setText(data.additionalInfoToday.activeEnDrilling)
-        editText_reactiveEnDrilling_today.setText(data.additionalInfoToday.reactiveEnDrilling)
-        editText_activeSpare_today.setText(data.additionalInfoToday.activeSpare)
-        editText_reactiveSpare_today.setText(data.additionalInfoToday.reactiveSpare)
-        editText_DGU_coefficient_transformation_field_today.setText("400")
-        editText_driller_coefficient_transformation_field_today.setText ("7200")
-        editText_densityFuel.setText("0.8155555555")
-
-        editText_coefficient_today.setText("0.21")
-        editText_coefficient_DGU2_today.setText("0.2")
-        editText_coefficient_DGU3_today.setText("0.3")
-        editText_coefficient_DGU4_today.setText("0.4")
-        editText_coefficient_DGU5_today.setText("0.5")
-        editText_coefficient_DGU6_today.setText("0.6")
-        editText_coefficient_DGU7_today.setText("0.7")
-        editText_coefficient_DGU8_today.setText("0.8")
-        editText_additionOil.setText("10")
-        edit_text_additionFuel.setText("100")
-
-        edit_text_cistern1.setText("1")
-        edit_text_cistern2.setText("2")
-        edit_text_cistern3.setText("3")
-        edit_text_cistern4.setText("4")
-        edit_text_cistern5.setText("5")
-        edit_text_cistern6.setText("6")
-        edit_text_cistern7.setText("7")
-        editText_allTanksOfDGU.setText("700")
-        editText_remainingFuel.setText("80000")
-
-    }  private fun initTomorrowTable(data: Data){
-
-        // DGU 1
-        textView_day_engineHours_tomorrow.text = data.dgu1.mChDay.toString()
-        editText_all_engineHours_tomorrow.setText(data.dgu1.mChAll.toString())
-        textView_day_KWT.text = data.dgu1.kWtDay.toString()
-        editText_all_KWT.setText(data.dgu1.kWtAll.toString())
-        textView_averageLoad.text = data.dgu1.averageLoad.toString()
-        editText_fuelConsumption.setText(data.dgu1.fuelConsumption.toString())
-        editText_coefficient.setText(data.dgu1.coefficient.toString())
-        editText_oilConsumption.setText(data.dgu1.oilConsumption.toString())
-        editText_afterServiceTO.setText(data.dgu1.afterTO.toString())
-        editText_activeEnergy.setText(data.dgu1.activeEnergy.toString())
-        editText_reactiveEnergy.setText(data.dgu1.reactiveEnergy.toString())
-        textView_KWT_second_counter.text = data.dgu1.activeEnergyInKWT.toString()
-        textView_differenceInKWT.text = data.dgu1.differenceKWT.toString()
-
-        // DGU 2
-        textView_engineHours_DGU2.text =       data.dgu2.mChDay.toString()
-        editText_allEngineHours_DGU2.setText   (data.dgu2.mChAll.toString())
-        textView_dayKWT_DGU2.text =            data.dgu2.kWtDay.toString()
-        editText_allKWT_DGU2.setText           (data.dgu2.kWtAll.toString())
-        textView_averageLoad_DGU2.text =       data.dgu2.averageLoad.toString()
-        editText_fuelConsumption_DGU2.setText  (data.dgu2.fuelConsumption.toString())
-        editText_coefficient_DGU2.setText      (data.dgu2.coefficient.toString())
-        editText_oilConsumption_DGU2.setText   (data.dgu2.oilConsumption.toString())
-        editText_afterServiceTO_DGU2.setText   (data.dgu2.afterTO.toString())
-        editText_activeEnergy_DGU2.setText     (data.dgu2.activeEnergy.toString())
-        editText_reactiveEnergy_DGU2.setText   (data.dgu2.reactiveEnergy.toString())
-        textView_KWT_DGU2.text =               data.dgu2.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU2.text =   data.dgu2.differenceKWT.toString()
-
-
-        // DGU 3
-        textView_engineHours_DGU3.text =       data.dgu3.mChDay.toString()
-        editText_allEngineHours_DGU3.setText   (data.dgu3.mChAll.toString())
-        textView_dayKWT_DGU3.text =            data.dgu3.kWtDay.toString()
-        editText_allKWT_DGU3.setText           (data.dgu3.kWtAll.toString())
-        textView_averageLoad_DGU3.text =       data.dgu3.averageLoad.toString()
-        editText_fuelConsumption_DGU3.setText  (data.dgu3.fuelConsumption.toString())
-        editText_coefficient_DGU3.setText      (data.dgu3.coefficient.toString())
-        editText_oilConsumption_DGU3.setText   (data.dgu3.oilConsumption.toString())
-        editText_afterServiceTO_DGU3.setText   (data.dgu3.afterTO.toString())
-        editText_activeEnergy_DGU3.setText     (data.dgu3.activeEnergy.toString())
-        editText_reactiveEnergy_DGU3.setText   (data.dgu3.reactiveEnergy.toString())
-        textView_KWT_DGU3.text =               data.dgu3.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU3.text =   data.dgu3.differenceKWT.toString()
-
-        // DGU 4
-        textView_engineHours_DGU4.text =       data.dgu4.mChDay.toString()
-        editText_allEngineHours_DGU4.setText   (data.dgu4.mChAll.toString())
-        textView_dayKWT_DGU4.text =            data.dgu4.kWtDay.toString()
-        editText_allKWT_DGU4.setText           (data.dgu4.kWtAll.toString())
-        textView_averageLoad_DGU4.text =       data.dgu4.averageLoad.toString()
-        editText_fuelConsumption_DGU4.setText  (data.dgu4.fuelConsumption.toString())
-        editText_coefficient_DGU4.setText      (data.dgu4.coefficient.toString())
-        editText_oilConsumption_DGU4.setText   (data.dgu4.oilConsumption.toString())
-        editText_afterServiceTO_DGU4.setText   (data.dgu4.afterTO.toString())
-        editText_activeEnergy_DGU4.setText     (data.dgu4.activeEnergy.toString())
-        editText_reactiveEnergy_DGU4.setText   (data.dgu4.reactiveEnergy.toString())
-        textView_KWT_DGU4.text =               data.dgu4.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU4.text =   data.dgu4.differenceKWT.toString()
-
-        // DGU 5
-        textView_engineHours_DGU5.text =       data.dgu5.mChDay.toString()
-        editText_allEngineHours_DGU5.setText   (data.dgu5.mChAll.toString())
-        textView_dayKWT_DGU5.text =            data.dgu5.kWtDay.toString()
-        editText_allKWT_DGU5.setText           (data.dgu5.kWtAll.toString())
-        textView_averageLoad_DGU5.text =       data.dgu5.averageLoad.toString()
-        editText_fuelConsumption_DGU5.setText  (data.dgu5.fuelConsumption.toString())
-        editText_coefficient_DGU5.setText      (data.dgu5.coefficient.toString())
-        editText_oilConsumption_DGU5.setText   (data.dgu5.oilConsumption.toString())
-        editText_afterServiceTO_DGU5.setText   (data.dgu5.afterTO.toString())
-        editText_activeEnergy_DGU5.setText     (data.dgu5.activeEnergy.toString())
-        editText_reactiveEnergy_DGU5.setText   (data.dgu5.reactiveEnergy.toString())
-        textView_KWT_DGU5.text =               data.dgu5.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU5.text =   data.dgu5.differenceKWT.toString()
-
-
-        // DGU 6
-        textView_engineHours_DGU6.text =       data.dgu6.mChDay.toString()
-        editText_allEngineHours_DGU6.setText   (data.dgu6.mChAll.toString())
-        textView_dayKWT_DGU6.text =            data.dgu6.kWtDay.toString()
-        editText_allKWT_DGU6.setText           (data.dgu6.kWtAll.toString())
-        textView_averageLoad_DGU6.text =       data.dgu6.averageLoad.toString()
-        editText_fuelConsumption_DGU6.setText  (data.dgu6.fuelConsumption.toString())
-        editText_coefficient_DGU6.setText      (data.dgu6.coefficient.toString())
-        editText_oilConsumption_DGU6.setText   (data.dgu6.oilConsumption.toString())
-        editText_afterServiceTO_DGU6.setText   (data.dgu6.afterTO.toString())
-        editText_activeEnergy_DGU6.setText     (data.dgu6.activeEnergy.toString())
-        editText_reactiveEnergy_DGU6.setText   (data.dgu6.reactiveEnergy.toString())
-        textView_KWT_DGU6.text =               data.dgu6.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU6.text =   data.dgu6.differenceKWT.toString()
-
-
-        // DGU 7
-        textView_engineHours_DGU7.text =       data.dgu7.mChDay.toString()
-        editText_allEngineHours_DGU7.setText   (data.dgu7.mChAll.toString())
-        textView_dayKWT_DGU7.text =            data.dgu7.kWtDay.toString()
-        editText_allKWT_DGU7.setText           (data.dgu7.kWtAll.toString())
-        textView_averageLoad_DGU7.text =       data.dgu7.averageLoad.toString()
-        editText_fuelConsumption_DGU7.setText  (data.dgu7.fuelConsumption.toString())
-        editText_coefficient_DGU7.setText      (data.dgu7.coefficient.toString())
-        editText_oilConsumption_DGU7.setText   (data.dgu7.oilConsumption.toString())
-        editText_afterServiceTO_DGU7.setText   (data.dgu7.afterTO.toString())
-        editText_activeEnergy_DGU7.setText     (data.dgu7.activeEnergy.toString())
-        editText_reactiveEnergy_DGU7.setText   (data.dgu7.reactiveEnergy.toString())
-        textView_KWT_DGU7.text =               data.dgu7.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU7.text =   data.dgu7.differenceKWT.toString()
-
-        // DGU 8
-        textView_engineHours_DGU8.text =       data.dgu8.mChDay.toString()
-        editText_allEngineHours_DGU8.setText   (data.dgu8.mChAll.toString())
-        textView_dayKWT_DGU8.text =            data.dgu8.kWtDay.toString()
-        editText_allKWT_DGU8.setText           (data.dgu8.kWtAll.toString())
-        textView_averageLoad_DGU8.text =       data.dgu8.averageLoad.toString()
-        editText_fuelConsumption_DGU8.setText  (data.dgu8.fuelConsumption.toString())
-        editText_coefficient_DGU8.setText      (data.dgu8.coefficient.toString())
-        editText_oilConsumption_DGU8.setText   (data.dgu8.oilConsumption.toString())
-        editText_afterServiceTO_DGU8.setText   (data.dgu8.afterTO.toString())
-        editText_activeEnergy_DGU8.setText     (data.dgu8.activeEnergy.toString())
-        editText_reactiveEnergy_DGU8.setText   (data.dgu8.reactiveEnergy.toString())
-        textView_KWT_DGU8.text =               data.dgu8.activeEnergyInKWT.toString()
-        textView_differenceInKWT_DGU8.text =   data.dgu8.differenceKWT.toString()
-
-        // additional field
-        editText_remainingFuel.setText    (data.additionalInfoTomorrow.remainingFuel)
-        editText_remainingOil.setText(data.additionalInfoTomorrow.remainingOil)
-        editText_fuelCounter.setText(data.additionalInfoTomorrow.fuelCounter)
-        editText_activeEnDrilling.setText( data.additionalInfoTomorrow.activeEnDrilling)
-        editText_reactiveEnDrilling.setText(data.additionalInfoTomorrow.reactiveEnDrilling)
-        editText_activeSpare.setText(data.additionalInfoTomorrow.activeSpare)
-        editText_reactiveSpare.setText(data.additionalInfoTomorrow.reactiveSpare)
-        editText_DGU_coefficient_transformation_field.setText(data.additionalInfoTomorrow.DGU_coefficient_transformation)
-        editText_driller_coefficient_transformation_field.setText(data.additionalInfoTomorrow.driller_coefficient_transformation)
     }
 
     fun onClick(view: View) {
         calculation()
-        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+//        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
 
     }
-
+    var isSaved = false
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     } override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_save -> {saveData(); Toast.makeText(this, "Сохраненно", Toast.LENGTH_SHORT).show(); item.title = "Сохраненно!";   return true}
+            R.id.action_save -> {saveData(); Toast.makeText(this, "Сохраненно", Toast.LENGTH_SHORT).show(); isSaved = true; item.title = "Сохраненно!";   return true}
             R.id.action_restore -> {restoreData(); Toast.makeText(this, "Восстановлено", Toast.LENGTH_SHORT).show();  return true}
             R.id.action_rustik -> {Toast.makeText(this, "А Рустик молодеец!", Toast.LENGTH_SHORT).show(); return true}
+            R.id.action_feedback -> {DialogFeedback().show(supportFragmentManager, "Dialog") ; return true}
 
         }
         return super.onOptionsItemSelected(item)
     } var back_pressed: Long = 0 ; override fun onBackPressed() {
         if (back_pressed + 1000 > System.currentTimeMillis()) {
-//            if()
-            super.onBackPressed();
+            if(isSaved)
+                super.onBackPressed()
+            else Toast.makeText(this, "Cводка не сохранена!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Нажмите еще раз чтобы выйти!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Нажмите еще раз чтобы выйти.", Toast.LENGTH_SHORT).show();
             back_pressed = System.currentTimeMillis();
         }
     }

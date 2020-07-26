@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Svodka Android version</string>
+    <string name="app_name">Сводка</string>
     <string name="allKWT_ofEnergyComplex">Сумма кВт</string>
     <string name="allEngineRunHoursOfComplex">Сумма м/ч</string>
     <string name="remainingFuelWeight">Вес общ ДТ</string>
@@ -30,4 +30,6 @@
     <string name="save_additional_field">save_additional_field</string>
     <string name="save_remains_field">save_remains_field</string>
     <string name="save_notes_field">save_notes_field</string>
+    <string name="developer">Developed by Dinislam Gaifullin Svodka App version 1.0</string>
+<!--    <string name="developer">Developed by Dinislam Gaifullin \"Svodka version 1.0\" при поддержке фонда трактористов</string>-->
 </resources>

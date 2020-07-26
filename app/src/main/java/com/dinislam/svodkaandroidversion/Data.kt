@@ -58,4 +58,6 @@ class Data {
         )
     val additionalInfoToday = AdditionalInfo(activeEnDrilling = "250", reactiveEnDrilling = "251",
         activeSpare = "252", reactiveSpare = "253")
+
+
 }
