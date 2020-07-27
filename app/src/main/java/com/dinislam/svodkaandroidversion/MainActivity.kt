@@ -1,13 +1,12 @@
 package com.dinislam.svodkaandroidversion
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,10 +27,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        if(getColumnCount() > 1200){
+            setContentView(R.layout.activity_main)
+        } else setContentView(R.layout.activity_main_small_size)
 
         initArray()
         formattingData()
+    }
+
+    private fun getColumnCount(): Int {
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val width = (displayMetrics.widthPixels / displayMetrics.density).toInt()
+        return width
     }
 
     private fun initArray() {
@@ -363,8 +371,6 @@ class MainActivity : AppCompatActivity() {
         remainsPanelSB.append(editText_densityFuel.text.toString().plus(";"))
         remainsPanelSB.append(editText_allTanksOfDGU.text.toString().plus(";"))
 
-
-
         val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return
         with (sharedPref.edit()) {
             putString(getString(R.string.save_main_field), mainFieldSb.toString())
@@ -519,7 +525,6 @@ class MainActivity : AppCompatActivity() {
                             editText_oilConsumption_DGU8_today.text.toString().toInt()
                     )).toString())
 
-
             // Day Consumption Fuel
             editText_allConsumptionFuel.setText((
                     textView_fuelConsumption_today.text.toString().toInt() +
@@ -561,18 +566,6 @@ class MainActivity : AppCompatActivity() {
 
             // Average coeff all complex
             editText_averageCoefficientAllComplex.setText((editText_allConsumptionFuel.text.toString().toDouble() / editText_allKWT_ofEnergyComplex.text.toString().toInt()).toFloat().toString())
-
-            //Average load all complex
-            /*editText_averageLoadAllComplex.setText(("s"
-                    *//*(textView_averageLoad_today.text.toString().toInt() +
-                textView_averageLoad_DGU2_today.text.toString().toInt() +
-                textView_averageLoad_DGU3_today.text.toString().toInt() +
-                textView_averageLoad_DGU4_today.text.toString().toInt() +
-                textView_averageLoad_DGU5_today.text.toString().toInt() +
-                textView_averageLoad_DGU6_today.text.toString().toInt() +
-                textView_averageLoad_DGU7_today.text.toString().toInt() +
-                textView_averageLoad_DGU8_today.text.toString().toInt()*//*).toString()
-        )*/
 
             // The difference of remaining fuel
             edit_text_differenceRealRemainingAndOfficial.setText(((

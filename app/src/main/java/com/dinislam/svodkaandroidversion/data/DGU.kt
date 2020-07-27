@@ -3,11 +3,7 @@ package com.dinislam.svodkaandroidversion.data
 import android.widget.EditText
 import android.widget.TextView
 
-data class DGU (var numDGU: String = "0", var mChDay: String = "0", var mChAll: String = "0", var kWtDay: String = "0",
-                var kWtAll: String = "0" , var averageLoad: String = "0", var fuelConsumption: String = "0",
-         var coefficient: String = "0", var oilConsumption: String = "0", var afterTO: String = "0",
-         var activeEnergy: String = "0", var reactiveEnergy: String = "0", var activeEnergyInKWT: String = "0",
-         var differenceKWT: String = "0") {
+data class DGU (val a: String = "") {
 
     lateinit var prop01: TextView
     lateinit var prop02: EditText
