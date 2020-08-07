@@ -13,14 +13,10 @@
         android:orderInCategory="100"
         android:title="Восстановить"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_rustik"
-        android:orderInCategory="100"
-        android:title="Кнопка для Рустика"
-        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_feedback"
         android:orderInCategory="100"
-        android:title="Связь с разработчиком"
+        android:title="Обратная связь"
         app:showAsAction="never" />
 </menu>

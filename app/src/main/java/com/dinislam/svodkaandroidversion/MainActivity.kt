@@ -17,6 +17,8 @@ import kotlinx.android.synthetic.main.additional_field_tomorrow.*
 import kotlinx.android.synthetic.main.main_field_today.*
 import kotlinx.android.synthetic.main.main_field_tomorrow.*
 import kotlinx.android.synthetic.main.panel_remains.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,19 +29,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(getColumnCount() > 1200){
-            setContentView(R.layout.activity_main)
-        } else setContentView(R.layout.activity_main_small_size)
-
-        initArray()
-        formattingData()
+        Log.i("Den", getScreenSize().toString())
+        try {
+            if(getScreenSize() > 1200){
+                setContentView(R.layout.activity_main)
+            } else setContentView(R.layout.activity_main_small_size)
+            initArray()
+            formattingData()
+        } catch (e: Exception){
+            Toast.makeText(this, "Ошибка", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun getColumnCount(): Int {
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Den", "destroy")
+
+    }
+
+    private fun getScreenSize(): Int {
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val width = (displayMetrics.widthPixels / displayMetrics.density).toInt()
-        return width
+        val a = if (displayMetrics.widthPixels < displayMetrics.heightPixels)  displayMetrics.heightPixels else displayMetrics.widthPixels
+        return (a / displayMetrics.density).toInt()
     }
 
     private fun initArray() {
@@ -333,7 +345,15 @@ class MainActivity : AppCompatActivity() {
         arrayAdditionalTomorrow.add(editText_reactiveSpare)
     }
 
-    private fun saveData(){
+    private fun saveData() : Boolean{
+        for (dg in arrayToday){
+            if(edit_text_allEngineRunHoursOfComplex.text.toString() == "0" || edit_text_allEngineRunHoursOfComplex.text.isEmpty()){
+                Toast.makeText(this, "Отсутствуют данные работы энергокомплекса. Сводка не сохранена.",
+                    Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }
+
         val mainFieldSb = StringBuilder()
         for (e in arrayToday){
             mainFieldSb.append(e.prop01.text.toString().plus(";"))
@@ -371,13 +391,14 @@ class MainActivity : AppCompatActivity() {
         remainsPanelSB.append(editText_densityFuel.text.toString().plus(";"))
         remainsPanelSB.append(editText_allTanksOfDGU.text.toString().plus(";"))
 
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return false
         with (sharedPref.edit()) {
             putString(getString(R.string.save_main_field), mainFieldSb.toString())
             putString(getString(R.string.save_additional_field), additionalFieldSB.toString())
             putString(getString(R.string.save_remains_field), remainsPanelSB.toString())
             putString(getString(R.string.save_notes_field), editText_notes.text.toString())
             commit()
+            return true
         }
     }  private fun restoreData(){
         val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return
@@ -394,6 +415,13 @@ class MainActivity : AppCompatActivity() {
         val remInfArr = remInf?.split(";")
 
         var i = 0;
+
+        if(mainInfArray?.size!!  < 2){
+            Toast.makeText(this, "Ошибка восстановления сводки. Данные отсутсвуют", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+
         for ( e in arrayToday){
             e.prop01.setText(mainInfArray?.get(i) ?: "0")
             e.prop02.setText(mainInfArray?.get(i + 1) ?: "0" )
@@ -458,6 +486,8 @@ class MainActivity : AppCompatActivity() {
         editText_additionOil.setText("0")
 
         calculation()
+
+        Toast.makeText(this, "Восстановлено", Toast.LENGTH_SHORT).show();
     }
 
     private fun calculation(){
@@ -663,32 +693,35 @@ class MainActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         calculation()
-//        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-
     }
-    var isSaved = false
+    private var isSaved = false
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     } override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_save -> {saveData(); Toast.makeText(this, "Сохраненно", Toast.LENGTH_SHORT).show(); isSaved = true; item.title = "Сохраненно!";   return true}
-            R.id.action_restore -> {restoreData(); Toast.makeText(this, "Восстановлено", Toast.LENGTH_SHORT).show();  return true}
-            R.id.action_rustik -> {Toast.makeText(this, "А Рустик молодеец!", Toast.LENGTH_SHORT).show(); return true}
+            R.id.action_save -> {
+                if(saveData()){
+                    Toast.makeText(this, "Сохраненно", Toast.LENGTH_SHORT).show()
+                    isSaved = true; item.title = "Сохраненно в ${SimpleDateFormat("HH:mm dd-MMMM", Locale.getDefault()).format(Date())}"
+                }
+                return true}
+            R.id.action_restore -> {restoreData(); return true}
+//            R.id.action_rustik -> {motivationForRus(); return true}
             R.id.action_feedback -> {DialogFeedback().show(supportFragmentManager, "Dialog") ; return true}
-
         }
         return super.onOptionsItemSelected(item)
-    } var back_pressed: Long = 0 ; override fun onBackPressed() {
+    } var back_pressed: Long = 0 ;
+
+    override fun onBackPressed() {
         if (back_pressed + 1000 > System.currentTimeMillis()) {
             if(isSaved)
                 super.onBackPressed()
-            else Toast.makeText(this, "Cводка не сохранена!", Toast.LENGTH_SHORT).show();
+            else Toast.makeText(this, "Cводка не сохранена!", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Нажмите еще раз чтобы выйти.", Toast.LENGTH_SHORT).show();
-            back_pressed = System.currentTimeMillis();
+            Toast.makeText(this, "Нажмите еще раз чтобы выйти.", Toast.LENGTH_SHORT).show()
+            back_pressed = System.currentTimeMillis()
         }
     }
 }
