@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.i("Den", "destroy")
-
     }
 
     private fun getScreenSize(): Int {
